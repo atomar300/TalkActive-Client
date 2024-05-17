@@ -1,0 +1,82 @@
+.search-users-container {
+    height: 80vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60vw;
+    margin: auto;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    background: rgba(120, 120, 120, 0.2);
+    backdrop-filter: blur(5px);
+    padding: 1vmax;
+}
+.users-search-box{
+    width: 50%;
+    box-sizing: border-box;
+    border-radius: 5px;
+    display: flex;
+    background-color: white;
+}
+.users-search-box > input{
+    flex: 1;
+    width: 50%;
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 0.5vmax;
+    font-size: 18px;
+    outline: none;
+    border: none;
+}
+.users-search-box > button{
+    background-color: white;
+    border-radius: 5px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.users-search-box > button > svg{
+    font-size: 23px;
+}
+.search-users-container > ul{
+    height: 100%;
+    box-sizing: border-box;
+    width: 50%;
+    overflow-y: auto;
+    padding: 0;
+}
+.search-users-container > ul > li{
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background: rgba(141, 82, 65, 0.4);
+    padding: 0.5vmax;
+    height: 4vmax;
+    border-radius: 5px;
+    margin: 5px 0;
+}
+.search-users-container > ul > li > p {
+    margin-left: 0.5vmax;
+    font-size: 18px;
+}
+.search-users-container > ul > li > img{
+    width: 3vmax;
+    height: 3vmax;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.search-users-container > ul > li > button {
+    padding: 0.5vmax;
+    font-size: 18px;
+    border-radius: 5%;
+    margin-left: auto;
+    border: none;
+    background-color: rgba(255, 70, 0, 0.8);
+}
+.search-users-container > ul > li > button:hover {
+    background-color: rgba(255, 0, 0, 0.715);
+    cursor: pointer;
+}
