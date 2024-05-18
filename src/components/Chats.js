@@ -44,9 +44,8 @@ const Chats = () => {
 
 
   const connectSocket = () => {
-    // const socket = new SockJS("http://192.168.2.242:8080/ws");
-    const socket = new SockJS("http://localhost:8080/ws");
-    // const socket = new SockJS("http://192.168.2.23:8080/ws");
+    // const socket = new SockJS("http://localhost:8080/ws");
+    const socket = new SockJS(`${process.env.REACT_APP_API_URL}/ws`);
     const client = Stomp.over(socket);
     setStompClient(client);
     const token = localStorage.getItem("talkactiveToken");
