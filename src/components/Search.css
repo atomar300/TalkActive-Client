@@ -12,14 +12,16 @@
     backdrop-filter: blur(5px);
     padding: 1vmax;
 }
-.users-search-box{
+
+.users-search-box {
     width: 50%;
     box-sizing: border-box;
     border-radius: 5px;
     display: flex;
     background-color: white;
 }
-.users-search-box > input{
+
+.users-search-box>input {
     flex: 1;
     width: 50%;
     box-sizing: border-box;
@@ -29,7 +31,8 @@
     outline: none;
     border: none;
 }
-.users-search-box > button{
+
+.users-search-box>button {
     background-color: white;
     border-radius: 5px;
     border: none;
@@ -37,17 +40,20 @@
     justify-content: center;
     align-items: center;
 }
-.users-search-box > button > svg{
+
+.users-search-box>button>svg {
     font-size: 23px;
 }
-.search-users-container > ul{
+
+.search-users-container>ul {
     height: 100%;
     box-sizing: border-box;
     width: 50%;
     overflow-y: auto;
     padding: 0;
 }
-.search-users-container > ul > li{
+
+.search-users-container>ul>li {
     list-style: none;
     display: flex;
     justify-content: flex-start;
@@ -58,17 +64,20 @@
     border-radius: 5px;
     margin: 5px 0;
 }
-.search-users-container > ul > li > p {
+
+.search-users-container>ul>li>p {
     margin-left: 0.5vmax;
     font-size: 18px;
 }
-.search-users-container > ul > li > img{
+
+.search-users-container>ul>li>img {
     width: 3vmax;
     height: 3vmax;
     border-radius: 50%;
     object-fit: cover;
 }
-.search-users-container > ul > li > button {
+
+.search-users-container>ul>li>button {
     padding: 0.5vmax;
     font-size: 18px;
     border-radius: 5%;
@@ -76,7 +85,33 @@
     border: none;
     background-color: rgba(255, 70, 0, 0.8);
 }
-.search-users-container > ul > li > button:hover {
+
+.search-users-container>ul>li>button:hover {
     background-color: rgba(255, 0, 0, 0.715);
     cursor: pointer;
+}
+
+@media screen and (max-width: 800px) {
+    .search-users-container {
+        width: 95vw;
+    }
+    .users-search-box {
+        width: 100%;
+    }
+    .users-search-box>input {
+        padding: 10px;
+    }
+    .search-users-container>ul {
+        width: 100%;
+    }
+    .search-users-container>ul>li {
+        padding: 15px;
+    }
+    .search-users-container>ul>li>p {
+        margin-left: 15px;
+    }
+    .search-users-container>ul>li>img {
+        width: 35px;
+        height: 35px;
+    }
 }

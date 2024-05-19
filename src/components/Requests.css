@@ -1,9 +1,10 @@
-.requests-container{
+.requests-container {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.requests-content{
+
+.requests-content {
     position: relative;
     display: flex;
     justify-content: space-between;
@@ -15,24 +16,26 @@
     background: rgba(120, 120, 120, 0.2);
     backdrop-filter: blur(5px);
 }
-.friendRequests-container{
+
+.friendRequests-container {
     padding: 1vmax;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    height: 100%;
     height: 75vh;
     width: 50%;
     border-right: 1px solid black;
 }
-.friendRequests-container > ul {
+
+.friendRequests-container>ul {
     height: 100%;
     box-sizing: border-box;
     width: 100%;
     padding: 0;
     overflow-y: auto;
 }
-.friendRequests-container > ul > li {
+
+.friendRequests-container>ul>li {
     list-style: none;
     display: flex;
     flex-direction: row;
@@ -44,45 +47,51 @@
     padding: 0.5vmax;
     height: 4vmax;
 }
-.friendRequests-container > ul > li > p {
+
+.friendRequests-container>ul>li>p {
     margin-left: 0.5vmax;
     font-size: 18px;
 }
-.friendRequests-container > ul > li > img {
+
+.friendRequests-container>ul>li>img {
     width: 3vmax;
     height: 3vmax;
     border-radius: 50%;
     object-fit: cover;
 }
-.friendRequests-container > ul > li > button {
+
+.friendRequests-container>ul>li>button {
     padding: 0.5vmax;
     font-size: 18px;
-    border-radius: 5%;
+    border-radius: 5px;
     margin-left: auto;
     border: none;
     background-color: rgba(255, 70, 0, 0.8);
 }
-.friendRequests-container > ul > li > button:hover {
+
+.friendRequests-container>ul>li>button:hover {
     background-color: rgba(255, 0, 0, 0.715);
     cursor: pointer;
 }
-.sentFriendRequests-container{
+
+.sentFriendRequests-container {
     padding: 1vmax;
-    height: 100%;
     height: 75vh;
     width: 50%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
-.sentFriendRequests-container > ul {
+
+.sentFriendRequests-container>ul {
     height: 100%;
     box-sizing: border-box;
     width: 100%;
     padding: 0;
     overflow-y: auto;
 }
-.sentFriendRequests-container > ul > li {
+
+.sentFriendRequests-container>ul>li {
     list-style: none;
     display: flex;
     flex-direction: row;
@@ -94,26 +103,72 @@
     padding: 0.5vmax;
     height: 4vmax;
 }
-.sentFriendRequests-container > ul > li > p {
+
+.sentFriendRequests-container>ul>li>p {
     margin-left: 0.5vmax;
     font-size: 18px;
 }
-.sentFriendRequests-container > ul > li > img {
+
+.sentFriendRequests-container>ul>li>img {
     width: 3vmax;
     height: 3vmax;
     border-radius: 50%;
     object-fit: cover;
 }
-.sentFriendRequests-container > ul > li > button {
+
+.sentFriendRequests-container>ul>li>button {
     padding: 0.5vmax;
     font-size: 18px;
-    border-radius: 5%;
+    border-radius: 5px;
     margin-left: auto;
     border: none;
     background-color: rgba(255, 70, 0, 0.8);
 }
-.sentFriendRequests-container > ul > li > button:hover {
+
+.sentFriendRequests-container>ul>li>button:hover {
     background-color: rgba(255, 0, 0, 0.715);
     cursor: pointer;
 }
 
+@media screen and (max-width: 800px) {
+    .requests-content {
+        width: 95vw;
+    }
+    .friendRequests-container>ul>li {
+        padding: 5px;
+    }
+    
+    .friendRequests-container>ul>li>p {
+        margin-left: 5px;
+        font-size: 15px;
+    }
+    
+    .friendRequests-container>ul>li>img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .friendRequests-container>ul>li>button {
+        font-size: 15px;
+        padding: 5px;
+    }
+
+    .sentFriendRequests-container>ul>li {
+        padding: 5px;
+    }
+    
+    .sentFriendRequests-container>ul>li>p {
+        margin-left: 5px;
+        font-size: 15px;
+    }
+    
+    .sentFriendRequests-container>ul>li>img {
+        width: 25px;
+        height: 25px;
+    }
+    
+    .sentFriendRequests-container>ul>li>button {
+        padding: 5px;
+        font-size: 15px;
+    }
+}
