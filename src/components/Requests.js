@@ -44,7 +44,7 @@ const Requests = () => {
                 <div className='requests-content'>
 
                     <div className='friendRequests-container'>
-                        <div><h2>Friend Requests</h2></div>
+                        <div><h2>Requests</h2></div>
                         <ul>
                             {friendRequests && friendRequests.map(r => (
                                 <li key={r.id}>
@@ -57,7 +57,7 @@ const Requests = () => {
                     </div>
 
                     <div className='sentFriendRequests-container'>
-                        <div><h2>Sent Friend Requests</h2></div>
+                        <div><h2>Sent Requests</h2></div>
                         <ul>
                             {sentFriendRequests && sentFriendRequests.map(s => (
                                 <li key={s.id}>

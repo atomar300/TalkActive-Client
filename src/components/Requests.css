@@ -27,6 +27,11 @@
     border-right: 1px solid black;
 }
 
+.friendRequests-container > div {
+    width: 100%;
+    border-bottom: 1px solid black;
+}
+
 .friendRequests-container>ul {
     height: 100%;
     box-sizing: border-box;
@@ -83,6 +88,11 @@
     align-items: flex-start;
 }
 
+.sentFriendRequests-container > div {
+    width: 100%;
+    border-bottom: 1px solid black;
+}
+
 .sentFriendRequests-container>ul {
     height: 100%;
     box-sizing: border-box;
@@ -132,43 +142,69 @@
 
 @media screen and (max-width: 800px) {
     .requests-content {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         width: 95vw;
+        overflow: hidden;
+    }
+    .friendRequests-container {
+        border: 1px solid black;
+        height: 40vh;
+        border-radius: 5px;
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 5px;
+    }
+
+    .friendRequests-container > div > h2 {
+        font-size: 20px;
     }
     .friendRequests-container>ul>li {
-        padding: 5px;
+        padding: 15px;
     }
     
     .friendRequests-container>ul>li>p {
-        margin-left: 5px;
-        font-size: 15px;
+        margin-left: 15px;
     }
     
     .friendRequests-container>ul>li>img {
-        width: 25px;
-        height: 25px;
+        width: 35px;
+        height: 35px;
     }
 
     .friendRequests-container>ul>li>button {
-        font-size: 15px;
         padding: 5px;
     }
 
+    .sentFriendRequests-container {
+        border: 1px solid black;
+        height: 40vh;
+        border-radius: 5px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .sentFriendRequests-container > div > h2 {
+        font-size: 20px;
+    }
+
     .sentFriendRequests-container>ul>li {
-        padding: 5px;
+        padding: 15px;
     }
     
     .sentFriendRequests-container>ul>li>p {
-        margin-left: 5px;
-        font-size: 15px;
+        margin-left: 15px;
     }
     
     .sentFriendRequests-container>ul>li>img {
-        width: 25px;
-        height: 25px;
+        width: 35px;
+        height: 35px;
     }
     
     .sentFriendRequests-container>ul>li>button {
         padding: 5px;
-        font-size: 15px;
     }
 }

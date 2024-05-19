@@ -69,13 +69,13 @@ const Search = () => {
                         <img src={u.profileImage} alt='' />
                         <p>{u.name}</p>
                         {sentFriendRequests.find(f => f.id === u.id) ? (
-                            <button onClick={() => handleUnsendFriendRequest(u.id)}>Unsend Friend Request</button>
+                            <button onClick={() => handleUnsendFriendRequest(u.id)}>Unsend Request</button>
                         ) : allFriends.find(f => f.id === u.id) ? (
                             <button>Already a Friend</button>
                         ) : friendRequests.find(r => r.id === u.id) ? (
                             <button onClick={() => handleAcceptRequest(u.id)}>Accept Request</button>
                         ) : (
-                            <button onClick={() => handleSendFriendRequest(u)}>Send Friend Request</button>
+                            <button onClick={() => handleSendFriendRequest(u)}>Send Request</button>
                         )}
                     </li>
                 ))}
