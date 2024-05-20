@@ -9,6 +9,8 @@ import { addToCurrentChatMessages, getMessages } from '../redux/actions/messageA
 import { CiSearch } from "react-icons/ci";
 import { IS_SUBSCRIBED } from '../redux/constants/messageConstants';
 import Conversation from './Conversation';
+import { IoIosArrowForward } from "react-icons/io";
+import { IoIosArrowBack } from "react-icons/io";
 
 
 const Chats = () => {
@@ -19,6 +21,7 @@ const Chats = () => {
   const [searchInput, setSearchInput] = useState('');
   const [isTyping, setIsTyping] = useState(false);
   const [filteredFriends, setFilteredFriends] = useState([]);
+  const [isSideMenuOpen, setIsSideMenuOpen] = useState(false);
   // const [isBioPopUpOpen, setIsBioPopUpOpen] = useState(false);
 
   const dispatch = useDispatch();
@@ -44,8 +47,8 @@ const Chats = () => {
 
 
   const connectSocket = () => {
-    // const socket = new SockJS("http://localhost:8080/ws");
-    const socket = new SockJS(`${process.env.REACT_APP_API_URL}/ws`);
+    const socket = new SockJS("http://localhost:8080/ws");
+    // const socket = new SockJS(`${process.env.REACT_APP_API_URL}/ws`);
     const client = Stomp.over(socket);
     setStompClient(client);
     const token = localStorage.getItem("talkactiveToken");
@@ -80,8 +83,7 @@ const Chats = () => {
 
   const onNotificationReceived = (payload) => {
     const message = JSON.parse(payload.body);
-    dispatch(newMessageTrueValue(message.sender));
-    toast.success(`Message Received from: ${message.senderName}`)
+    toast.promise(dispatch(newMessageTrueValue(message.sender)), { success: `New Message from: ${message.senderName}` })
   }
 
   const onPrivateMessageReceived = (payload) => {
@@ -101,6 +103,7 @@ const Chats = () => {
 
 
   const handleUserClick = (selectedId) => {
+    dispatch(newMessageFalseValue(selectedId));
     if (selectedFriend && selectedFriend.id !== selectedId) {
       if (stompClient && subscription) {
         subscription.unsubscribe();
@@ -108,7 +111,7 @@ const Chats = () => {
       dispatch(getFriendDetails(selectedId));
       const userIds = { user1: user.id, user2: selectedId };
       dispatch(getMessages(userIds));
-      dispatch(newMessageFalseValue(selectedId));
+      // dispatch(newMessageFalseValue(selectedId));
     }
   };
 
@@ -123,7 +126,7 @@ const Chats = () => {
     <div className='chat-page'>
       <div className="chat-container">
         <div className="users-list">
-          <div className="users-list-container">
+          <div className={!isSideMenuOpen ? "users-list-container" : "hiddenUsersListContainer"}>
             <div>
               <div className='profile-pic'><img src={user.profileImage} alt='Profile' /></div>
               {user.name}
@@ -147,6 +150,7 @@ const Chats = () => {
               ))}
             </ul>
           </div>
+          <div className='sideMenu'>{isSideMenuOpen ? <IoIosArrowForward onClick={() => setIsSideMenuOpen(!isSideMenuOpen)} /> : <IoIosArrowBack onClick={() => setIsSideMenuOpen(!isSideMenuOpen)} />}</div>
         </div>
         {selectedFriend && selectedFriend.id ? (
           <Conversation stompClient={stompClient} isTyping={isTyping} />

@@ -1,6 +1,5 @@
 .chat-page {
     display: flex;
-    /* align-items: center; */
     justify-content: center;
     font-family: Arial, Helvetica, sans-serif;
     height: 85vh;
@@ -17,12 +16,31 @@
 }
 
 .users-list {
-    width: 20vmax;
-    padding: 10px;
     border-right: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hiddenUsersListContainer {
+    display: none;
+}
+
+.sideMenu {
+    cursor: pointer;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 0, 0, 0.3);
 }
 
 .users-list-container {
+    border-right: 1px solid black;
+    box-sizing: border-box;
+    width: 20vmax;
+    padding: 10px;
+
     height: 100%;
     /* overflow-y: auto; */
     display: flex;
@@ -314,11 +332,11 @@
 @media screen and (max-width: 800px) {
     .chat-container {
         width: 95vw;
+        height: 88vh;
     }
 
-    .users-list {
-        width: 90px;
-        padding: 3px;
+    .users-list-container {
+        padding: 5px;
     }
 
     .users-list-container>div:first-child {
