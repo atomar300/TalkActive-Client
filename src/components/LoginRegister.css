@@ -13,6 +13,7 @@
     border-radius: 5px;
     font-family: Arial, Helvetica, sans-serif;
     background: rgba(120, 120, 120, 0.2);
+    backdrop-filter: blur(5px);
 }
 
 .login-register-form h2 {
@@ -49,8 +50,6 @@
     gap: 5px;
 }
 .registerImage>div> div {
-    /* height: 3vmax;
-    width: 3vmax; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -102,7 +101,14 @@
 }
 
 @media screen and (max-width: 800px) {
+    .login-register-container {
+        height: 88vh;
+    }
     .login-register-form {
         width: 70%;
+    }
+    .registerImage>div> div> img {
+        height: 30px;
+        width: 30px;
     }
 }

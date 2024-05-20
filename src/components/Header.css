@@ -5,7 +5,6 @@
     padding: 1vmax;
 }
 .header {
-    height: 50px;
     width: 60vw;
     border-radius: 5px;
     background: rgba(86, 86, 86, 0.1);
@@ -18,16 +17,15 @@
 }
 .header-items-container{
     width: 100%;
-    height: 100%;
     padding: 0;
     display: flex;
     justify-content: space-around;
     align-items: center;
     text-align: center;
 }
-.header-items-container li {    
+.header-items-container li {
     list-style: none;
-    padding: 0.6vmax;
+    padding: 0.5vmax;
     border-radius: 5px;
 }
 .header-items-container li:hover {
@@ -36,7 +34,13 @@
 .header-items-container li a {
     text-decoration: none;
     color: white;
-    font-size: 17px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-items-container li a svg {
+    font-size: 20px;
 }
 
 @media screen and (max-width: 800px) {

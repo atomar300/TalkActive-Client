@@ -1,12 +1,23 @@
 import React from 'react'
 import "./Header.css";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import {logout} from "../redux/actions/userAction"
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { SiSpringboot } from "react-icons/si";
+import { IoChatbox } from "react-icons/io5";
+import { FaUserFriends } from "react-icons/fa";
+import { FaSearch } from "react-icons/fa";
+import { RiLoginBoxFill } from "react-icons/ri";
+
+
 
 const Header = () => {
 
     const dispatch = useDispatch();
+
+    const {isAuthenticated} = useSelector(state => state.user);
+
+    const navigate = useNavigate();
 
     return (
         <div className='header-container'>
@@ -16,16 +27,22 @@ const Header = () => {
                         <Link to="/">TalkActive</Link>
                     </li>
                     <li>
-                        <Link to="/chats">Chats</Link>
+                        <Link to="/chats"><IoChatbox /></Link>
                     </li>
                     <li>
-                        <Link to="/search">Search</Link>
+                        <Link to="/search"><FaSearch /></Link>
                     </li>
                     <li>
-                        <Link to="/requests">Requests</Link>
+                        <Link to="/requests"><FaUserFriends /></Link>
                     </li>
                     <li>
-                        <Link><div onClick={() => dispatch(logout())}>Logout</div></Link>
+                        <Link>{
+                            isAuthenticated ? (
+                                <SiSpringboot onClick={() => dispatch(logout())} />
+                            ) : (
+                                <RiLoginBoxFill />
+                            )
+                        }</Link>
                     </li>
                 </ul>
             </div>

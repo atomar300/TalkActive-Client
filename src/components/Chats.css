@@ -16,7 +16,6 @@
 }
 
 .users-list {
-    border-right: 1px solid black;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,20 +26,26 @@
 }
 
 .sideMenu {
-    cursor: pointer;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    background: rgba(141, 82, 65, 0.4);
+}
+
+.sideMenu:hover{
     background-color: rgba(255, 0, 0, 0.3);
 }
 
+.sideMenu > svg {
+    cursor: pointer;
+    color: white;
+}
+
 .users-list-container {
-    border-right: 1px solid black;
     box-sizing: border-box;
     width: 20vmax;
     padding: 10px;
-
     height: 100%;
     /* overflow-y: auto; */
     display: flex;

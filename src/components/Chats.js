@@ -126,7 +126,7 @@ const Chats = () => {
     <div className='chat-page'>
       <div className="chat-container">
         <div className="users-list">
-          <div className={!isSideMenuOpen ? "users-list-container" : "hiddenUsersListContainer"}>
+          <div className={isSideMenuOpen ? "hiddenUsersListContainer" : "users-list-container"}>
             <div>
               <div className='profile-pic'><img src={user.profileImage} alt='Profile' /></div>
               {user.name}
