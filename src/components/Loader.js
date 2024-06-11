@@ -5,6 +5,7 @@ const Loader = () => {
   return (
     <div className="loader">
       <h2>Loading...</h2>
+      <p>Expected time: 1 minute</p>
     </div>
   );
 };

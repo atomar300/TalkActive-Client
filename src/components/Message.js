@@ -29,7 +29,7 @@ const Message = () => {
                     {
                         currentChatMessages.map((message, index) => (
                             <div key={index} className={message.sender === (selectedFriend && selectedFriend.id) ? 'message sender' : 'message receiver'}>
-                                {message.image ? (<img className='message-content' src={message.content} onClick={() => setZoomImage(message.content)} alt='Message' />) : (<p className='message-content'>{message.content}</p>)}
+                                {message.image ? (<img className='message-content' loading="lazy" src={message.content} onClick={() => setZoomImage(message.content)} alt='Message' />) : (<p className='message-content'>{message.content}</p>)}
                                 <p className='message-time'>{moment(message.timestamp).format('h:mm A DD-MM-YYYY')}</p>
                             </div>
                         ))

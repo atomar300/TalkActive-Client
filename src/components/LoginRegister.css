@@ -55,6 +55,7 @@
     align-items: center;
 }
 .registerImage>div> div> img {
+    border: 2px solid white;
     border-radius: 50%;
     height: 3vmax;
     width: 3vmax;

@@ -74,8 +74,9 @@
 }
 
 .profile-pic>img {
-    width: 4.5vmax;
-    height: 4.5vmax;
+    border: 2px solid white;
+    width: 4vmax;
+    height: 4vmax;
     object-fit: cover;
     border-radius: 50%;
 }
@@ -166,6 +167,7 @@
 }
 
 .friendImage>img {
+    border: 2px solid white;
     width: 3vmax;
     height: 3vmax;
     object-fit: cover;
@@ -337,7 +339,7 @@
 @media screen and (max-width: 800px) {
     .chat-container {
         width: 95vw;
-        height: 88vh;
+        height: 85vh;
     }
 
     .users-list-container {
